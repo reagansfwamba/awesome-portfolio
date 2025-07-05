@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reagan Fwamba | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#606C38',
+                        primaryDark: '#283618',
+                        light: '#FEFAE0',
+                        accent: '#DDA15E',
+                        accentDark: '#BC6C25',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'bounce': 'bounce 2s ease infinite',
+                        'wave': 'wave 3s ease infinite',
+                        'curtainOpen': 'curtainOpen 1.5s cubic-bezier(0.65, 0, 0.35, 1) forwards',
+                        'pulse': 'pulse 2s infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        bounce: {
+                            '0%, 100%': { transform: 'translateY(0) rotate(-2deg)' },
+                            '50%': { transform: 'translateY(-20px) rotate(2deg)' },
+                        },
+                        wave: {
+                            '0%': { transform: 'rotate(0deg)' },
+                            '25%': { transform: 'rotate(5deg)' },
+                            '50%': { transform: 'rotate(-5deg)' },
+                            '75%': { transform: 'rotate(2deg)' },
+                            '100%': { transform: 'rotate(0deg)' },
+                        },
+                        curtainOpen: {
+                            '0%': { 'clip-path': 'inset(0 100% 0 0)' },
+                            '100%': { 'clip-path': 'inset(0 0 0 0)' },
+                        },
+                        pulse: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0.5' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="min-h-screen bg-light text-primaryDark">
+   <div id="root"></div>
+
+    <script type="module" src="/src/main.jsx"></script>
+  
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator"></div>
+    
+    <!-- Dark mode toggle -->
+    <div class="dark-mode-toggle" id="darkModeToggle">
+        <i class="ph ph-moon text-xl"></i>
+    </div>
+    
+    <!-- Sticky contact button (mobile) -->
+    <a href="#contact" class="sticky-contact md:hidden">
+        <i class="ph ph-chat-centered-text text-2xl"></i>
+    </a>
+    
+    <!-- Navigation -->
+    <header class="fixed w-full z-50 bg-primaryDark/80 backdrop-blur-md px-6 py-4 shadow-lg">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="logo">
+                <a href="#" class="text-2xl font-bold text-accent hover:text-accentDark transition-colors duration-300">
+                    <span class="text-light">Reagan</span> Fwamba
+                </a>
+            </div>
+            
+            <ul class="hidden md:flex space-x-8 navmenu">
+                <li><a href="#" class="nav-link text-light hover:text-accent font-medium transition-colors duration-300">Home</a></li>
+                <li><a href="#about" class="nav-link text-light hover:text-accent font-medium transition-colors duration-300">About</a></li>
+                <li><a href="#projects" class="nav-link text-light hover:text-accent font-medium transition-colors duration-300">Projects</a></li>
+                <li><a href="#services" class="nav-link text-light hover:text-accent font-medium transition-colors duration-300">Services</a></li>
+                <li><a href="#testimonials" class="nav-link text-light hover:text-accent font-medium transition-colors duration-300">Testimonials</a></li>
+                <li><a href="#contact" class="nav-link text-light hover:text-accent font-medium transition-colors duration-300">Contact</a></li>
+            </ul>
+            
+            <button class="md:hidden text-light focus:outline-none mobile-menu-btn" aria-label="Open mobile menu">
+                <i class="ph ph-list text-2xl"></i>
+            </button>
+        </div>
+    </header>
+    
+    <!-- Mobile menu -->
+    <div class="mobile-menu">
+        <button class="absolute top-4 right-4 text-light mobile-menu-close" aria-label="Close mobile menu">
+            <i class="ph ph-x text-2xl"></i>
+        </button>
+        <ul class="space-y-6 mt-12">
+            <li><a href="#" class="text-light hover:text-accent text-xl font-medium">Home</a></li>
+            <li><a href="#about" class="text-light hover:text-accent text-xl font-medium">About</a></li>
+            <li><a href="#projects" class="text-light hover:text-accent text-xl font-medium">Projects</a></li>
+            <li><a href="#services" class="text-light hover:text-accent text-xl font-medium">Services</a></li>
+            <li><a href="#testimonials" class="text-light hover:text-accent text-xl font-medium">Testimonials</a></li>
+            <li><a href="#contact" class="text-light hover:text-accent text-xl font-medium">Contact</a></li>
+        </ul>
+        
+        <div class="mt-12">
+            <h4 class="text-accent mb-4">Connect with me</h4>
+            <div class="flex space-x-4">
+                <a href="#" class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent hover:bg-accent hover:text-primaryDark transition-colors duration-300">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent hover:bg-accent hover:text-primaryDark transition-colors duration-300">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent hover:bg-accent hover:text-primaryDark transition-colors duration-300">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="home min-h-screen hero-gradient hero-pattern flex items-center justify-center px-6 relative overflow-hidden">
+        <!-- Floating shapes -->
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10 py-20">
+            <div class="home-text">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-light mb-4 text-3d bouncing-title">
+                    Hello I'm Reagan <i class="ph-bold ph-hand-waving text-accent"></i>
+                </h2>
+                
+                <!-- Animated curtain text effect -->
+                <div class="text-curtain mb-6">
+                    <h3 class="text-xl md:text-2xl text-accent">
+                        <span class="inline-block">Full-Stack Engineer</span>
+                        <span class="inline-block mx-4">|</span>
+                        <span class="inline-block">Java Specialist</span>
+                        <span class="inline-block mx-4">|</span>
+                        <span class="inline-block">Cloud Security Advocate</span>
+                    </h3>
+                </div>
+                
+                <div class="highlight-box">
+                    <p class="text-light mb-4">I build secure, scalable systems that solve real business problems. With expertise in:</p>
+                    <ul class="skills-highlight space-y-2">
+                        <li class="flex items-center text-light"><i class="ph ph-check text-accent mr-2"></i> Java & Spring ecosystems</li>
+                        <li class="flex items-center text-light"><i class="ph ph-check text-accent mr-2"></i> AWS & multi-cloud architectures</li>
+                        <li class="flex items-center text-light"><i class="ph ph-check text-accent mr-2"></i> DevSecOps practices</li>
+                        <li class="flex items-center text-light"><i class="ph ph-check text-accent mr-2"></i> Database optimization (SAP, Oracle, Azure)</li>
+                    </ul>
+                    <p class="text-light mt-4">When I'm not coding, I'm exploring financial markets and helping others build wealth through technology.</p>
+                </div>
+                
+                <div class="flex gap-4 mt-8 btns">
+                    <a href="#" class="px-6 py-3 bg-accent hover:bg-accentDark text-primaryDark font-medium rounded-lg transition-all duration-300 flex items-center">
+                        Download CV <i class="ph ph-download-simple ml-2"></i>
+                    </a>
+                    <a href="#contact" class="px-6 py-3 border border-accent text-accent hover:bg-accent/10 font-medium rounded-lg transition-all duration-300 flex items-center">
+                        Contact Me <i class="ph ph-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Currently building section -->
+                <div class="mt-12">
+                    <div class="flex items-center text-accent">
+                        <div class="status-indicator"></div>
+                        <span class="text-sm font-medium">Currently building: Cloud Security Dashboard for FinTech</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="3d-container" class="hidden lg:block floating" style="animation-delay: 0.5s;">
+                <!-- 3D representation of cloud architecture -->
+                <div class="w-full h-96 bg-gradient-to-br from-primary/20 to-primaryDark rounded-xl relative overflow-hidden">
+                    <!-- Cloud elements -->
+                    <div class="absolute top-1/4 left-1/4 w-16 h-16 bg-white/20 rounded-full"></div>
+                    <div class="absolute top-1/3 right-1/4 w-24 h-24 bg-white/30 rounded-full"></div>
+                    <div class="absolute bottom-1/4 left-1/3 w-20 h-20 bg-white/25 rounded-full"></div>
+                    
+                    <!-- Server elements -->
+                    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-32 h-32 bg-accent/10 backdrop-blur-sm rounded-lg border border-accent/30 flex flex-col items-center justify-center">
+                        <div class="w-8 h-8 bg-accent rounded-full mb-2"></div>
+                        <div class="w-24 h-2 bg-accent rounded-full mb-1"></div>
+                        <div class="w-20 h-2 bg-accent rounded-full"></div>
+                    </div>
+                    
+                    <!-- Floating code elements -->
+                    <div class="absolute top-4 right-4 w-24 h-16 bg-accent/10 backdrop-blur-sm rounded-lg p-2 text-xs font-mono text-light">
+                        <div class="text-accent">// API Endpoint</div>
+                        <div>GET /data</div>
+                    </div>
+                    
+                    <div class="absolute bottom-4 left-4 w-28 h-20 bg-accent/10 backdrop-blur-sm rounded-lg p-2 text-xs font-mono text-light">
+                        <div class="text-accent"># Database</div>
+                        <div>SELECT * FROM users</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-0 right-0 flex justify-center">
+            <a href="#about" class="scroll-btn flex flex-col items-center text-accent hover:text-light transition-colors duration-300">
+                <span>Scroll down</span>
+                <i class="ph ph-arrow-bend-right-down text-2xl mt-2 animate-bounce"></i>
+            </a>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-light">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primaryDark mb-4">
+                    About <span class="text-accent">Me</span>
+                </h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+            </div>
+            
+            <div class="about-grid grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="about-text">
+                    <h3 class="text-2xl font-bold text-primaryDark mb-6">Problem Solver & Continuous Learner</h3>
+                    <p class="text-primaryDark mb-6 leading-relaxed">
+                        With 5+ years in software development, I've helped businesses transform their operations through:
+                    </p>
+                    
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start text-primaryDark">
+                            <i class="ph ph-check-circle text-accent mr-2 mt-1"></i>
+                            <span>Secure application development with OWASP standards</span>
+                        </li>
+                        <li class="flex items-start text-primaryDark">
+                            <i class="ph ph-check-circle text-accent mr-2 mt-1"></i>
+                            <span>Cloud migration strategies reducing costs by 30-40%</span>
+                        </li>
+                        <li class="flex items-start text-primaryDark">
+                            <i class="ph ph-check-circle text-accent mr-2 mt-1"></i>
+                            <span>Performance optimization for high-traffic systems</span>
+                        </li>
+                    </li>
+                    
+                    <p class="text-primaryDark leading-relaxed">
+                        My unique blend of technical expertise and financial acumen allows me to build solutions that deliver both technical and business value.
+                    </p>
+                    
+                    <!-- Fun facts section -->
+                    <div class="mt-12">
+                        <h4 class="text-xl font-semibold text-primaryDark mb-4">Fun Facts About Me</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="fun-fact">
+                                <div class="flex items-center mb-2">
+                                    <i class="ph ph-car text-accent mr-2"></i>
+                                    <h5 class="font-medium text-primaryDark">Car Lover & Future Garage Owner</h5>
+                                </div>
+                                <p class="text-sm text-primaryDark">I will pause mid-convo to admire a sleek ride. I don't just want to drive them—I want to understand their engineering, performance, and legacy.</p>
+                            </div>
+                            
+                            <div class="fun-fact">
+                                <div class="flex items-center mb-2">
+                                    <i class="ph ph-compass text-accent mr-2"></i>
+                                    <h5 class="font-medium text-primaryDark">Curious Explorer at Heart</h5>
+                                </div>
+                                <p class="text-sm text-primaryDark">I have not traveled the world (yet), but I have explored new skills, stories, and systems with the curiosity of a backpacker in a foreign city.</p>
+                            </div>
+                            
+                            <div class="fun-fact">
+                                <div class="flex items-center mb-2">
+                                    <i class="ph ph-chat-circle-dots text-accent mr-2"></i>
+                                    <h5 class="font-medium text-primaryDark">Lover of Deep Talks & Real Ones</h5>
+                                </div>
+                                <p class="text-sm text-primaryDark">Small talk isn't really my thing. I'd rather talk about purpose, growth, and how you're really doing behind the "I'm fine."</p>
+                            </div>
+                            
+                            <div class="fun-fact">
+                                <div class="flex items-center mb-2">
+                                    <i class="ph ph-heart text-accent mr-2"></i>
+                                    <h5 class="font-medium text-primaryDark">Family-First, Loyalty-Always</h5>
+                                </div>
+                                <p class="text-sm text-primaryDark">I'm built on values—respect, honesty, and showing up. My mum's my hero, and I carry that grounded energy wherever I go.</p>
+                            </div>
+                            
+                            <div class="fun-fact">
+                                <div class="flex items-center mb-2">
+                                    <i class="ph ph-code text-accent mr-2"></i>
+                                    <h5 class="font-medium text-primaryDark">Currently Learning</h5>
+                                </div>
+                                <p class="text-sm text-primaryDark">Rust programming and advanced cloud security patterns.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-tech">
+                    <h3 class="text-2xl font-bold text-primaryDark mb-6">Technical Toolbox</h3>
+                    
+                    <!-- Tech stack with icons -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                        <div class="tech-icon">
+                            <i class="fab fa-java text-3xl text-accent"></i>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-aws text-3xl text-accent"></i>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-react text-3xl text-accent"></i>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-node-js text-3xl text-accent"></i>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fas fa-database text-3xl text-accent"></i>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-docker text-3xl text-accent"></i>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fas fa-lock text-3xl text-accent"></i>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fas fa-server text-3xl text-accent"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Skill bars -->
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-primaryDark font-medium">Java & Spring</span>
+                                <span class="text-accent">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-primaryDark font-medium">Cloud Architecture</span>
+                                <span class="text-accent">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-primaryDark font-medium">React & Node.js</span>
+                                <span class="text-accent">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-primaryDark font-medium">Database Optimization</span>
+                                <span class="text-accent">88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline -->
+                    <div class="mt-12">
+                        <h4 class="text-xl font-semibold text-primaryDark mb-6">My Journey</h4>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h5 class="font-bold text-primaryDark">2024 - Present</h5>
+                                <p class="text-primaryDark">Senior Full-Stack Engineer at The Reggs Ltd, Kenya</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h5 class="font-bold text-primaryDark">2023</h5>
+                                <p class="text-primaryDark">Backend Developer at The Reggs Ltd, Kenya</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h5 class="font-bold text-primaryDark">2022</h5>
+                                <p class="text-primaryDark">Junior Developer at The Reggs Ltd, Kenya</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h5 class="font-bold text-primaryDark">2019-2023</h5>
+                                <p class="text-primaryDark">BSc. Computer Science, Murang'a University of Science and Technology</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-light">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primaryDark mb-4">
+                    Featured <span class="text-accent">Projects</span>
+                </h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+                <p class="text-accent max-w-2xl mx-auto mt-6">
+                    Here are some of my recent projects that showcase my skills and expertise.
+                </p>
+            </div>
+            
+            <div class="project-grid grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-primary/10 rounded-xl p-6 transition-all duration-300 card-hover">
+                    <div class="project-header mb-4">
+                        <h3 class="text-xl font-bold text-primaryDark">Cloud Security Dashboard</h3>
+                        <div class="project-tags flex flex-wrap gap-2 mt-2">
+                            <span class="px-2 py-1 bg-accent/20 text-accent text-xs rounded-full">AWS</span>
+                            <span class="px-2 py-1 bg-accent/20 text-accent text-xs rounded-full">Java</span>
+                            <span class="px-2 py-1 bg-accent/20 text-accent text-xs rounded-full">React</span>
+                            <span class="px-2 py-1 bg-accent/20 text-accent text-xs rounded-full">Spring Boot</span>
+                        </div>
+                    </div>
+                    <p class="text-primaryDark mb-6">
+                        Centralized monitoring system for multi-cloud environments that reduced security incident response time by 65%.
+                    </p>
+                    
+                    <!-- Project demo placeholder -->
+                    <div class="mb-6 rounded-lg overflow-hidden bg-primaryDark/10 h-48 flex items-center justify-center">
+                        <i class="ph ph-cloud text-5xl text-accent"></i>
+                    </div>
+                    
+                    <div class="project-links flex gap-4">
+                        <a href="#" class="px-4 py-2 border border-accent text-accent hover:bg-accent hover:text-primaryDark rounded-lg transition-all duration-300 text-sm flex items-center">
+                            Case Study <i class="ph ph-arrow-square-out ml-1"></i>
+                        </a>
+                        <a href="#" class="px-4 py-2 border border-accent text-accent hover:bg-accent hover:text-primaryDark rounded-lg transition-all duration-300 text-sm flex items-center">
+                            Live Demo <i class="ph ph-play ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-primary/10 rounded-xl p-6 transition-all duration-300 card-hover">
+                    <div class="project-header mb-4">
+                        <h3 class="text-xl font-bold text-primaryDark">Financial Analytics Platform</h3>
+                        <div class="project-tags flex flex-wrap gap-2 mt-2">
+                            <span class="px-2 py-1 bg-accent/20 text-accent text-xs rounded-full">Spring Boot</span>
+                            <span class="px-2 py-1 bg-accent/20 text-accent text-xs rounded-full">Python</span>
+                            <span class="px-2 py-1 bg-accent/20 text-accent text-xs rounded-full">Azure</span>
+                            <span class="px-2 py-1 bg-accent/20 text-accent text-xs rounded-full">Kafka</span>
+                        </div>
+                    </div>
+                    <p class="text-primaryDark mb-6">
+                        Real-time investment analysis tool processing market data with 99.9% uptime SLA.
+                    </p>
+                    
+                    <!-- Project demo placeholder -->
+                    <div class="mb-6 rounded-lg overflow-hidden bg-primaryDark/10 h-48 flex items-center justify-center">
+                        <i class="ph ph-chart-line-up text-5xl text-accent"></i>
+                    </div>
+                    
+                    <div class="project-links flex gap-4">
+                        <a href="#" class="px-4 py-2 border border-accent text-accent hover:bg-accent hover:text-primaryDark rounded-lg transition-all duration-300 text-sm flex items-center">
+                            Case Study <i class="ph ph-arrow-square-out ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-primary/10 rounded-xl p-6 transition-all duration-300 card-hover">
+                    <div class="project-header mb-4">
+                        <h3 class="text-xl font-bold text-primaryDark">E-Commerce API</h3>
+                        <div class="project-tags flex flex-wrap gap-2 mt-2">
+                            <span class="px-2 py-1 bg-accent/20 text-accent text-xs rounded-full">Express</span>
+                            <span class="px-2 py-1 bg-accent/20 text-accent text-xs rounded-full">PostgreSQL</span>
+                            <span class="px-2 py-1 bg-accent/20 text-accent text-xs rounded-full">Stripe API</span>
+                            <span class="px-2 py-1 bg-accent/20 text-accent text-xs rounded-full">Redis</span>
+                        </div>
+                    </div>
+                    <p class="text-primaryDark mb-6">
+                        Scalable e-commerce backend with payment integration and inventory management.
+                    </p>
+                    
+                    <!-- Project demo placeholder -->
+                    <div class="mb-6 rounded-lg overflow-hidden bg-primaryDark/10 h-48 flex items-center justify-center">
+                        <i class="ph ph-shopping-cart text-5xl text-accent"></i>
+                    </div>
+                    
+                    <div class="project-links flex gap-4">
+                        <a href="#" class="px-4 py-2 border border-accent text-accent hover:bg-accent hover:text-primaryDark rounded-lg transition-all duration-300 text-sm flex items-center">
+                            View Project <i class="ph ph-arrow-square-out ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card bg-primary/10 rounded-xl p-6 transition-all duration-300 card-hover">
+                    <div class="project-header mb-4">
+                        <h3 class="text-xl font-bold text-primaryDark">SecureAuth</h3>
+                        <div class="project-tags flex flex-wrap gap-2 mt-2">
+                            <span class="px-2 py-1 bg-accent/20 text-accent text-xs rounded-full">TypeScript</span>
+                            <span class="px-2 py-1 bg-accent/20 text-accent text-xs rounded-full">NestJS</span>
+                            <span class="px-2 py-1 bg-accent/20 text-accent text-xs rounded-full">Redis</span>
+                            <span class="px-2 py-1 bg-accent/20 text-accent text-xs rounded-full">JWT</span>
+                        </div>
+                    </div>
+                    <p class="text-primaryDark mb-6">
+                        Authentication microservice with multi-factor authentication and advanced security features.
+                    </p>
+                    
+                    <!-- Project demo placeholder -->
+                    <div class="mb-6 rounded-lg overflow-hidden bg-primaryDark/10 h-48 flex items-center justify-center">
+                        <i class="ph ph-lock-key text-5xl text-accent"></i>
+                    </div>
+                    
+                    <div class="project-links flex gap-4">
+                        <a href="#" class="px-4 py-2 border border-accent text-accent hover:bg-accent hover:text-primaryDark rounded-lg transition-all duration-300 text-sm flex items-center">
+                            View Project <i class="ph ph-arrow-square-out ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <div class="cta">
+                    <p class="text-accent mb-4">Want to see more? Check out my:</p>
+                    <div class="cta-links flex justify-center gap-4">
+                        <a href="https://github.com/reagansfwamba" class="px-6 py-3 bg-primary/30 hover:bg-primary/50 text-primaryDark font-medium rounded-lg transition-all duration-300 inline-flex items-center">
+                            GitHub <i class="ph ph-github-logo ml-2"></i>
+                        </a>
+                        <a href="#" class="px-6 py-3 bg-accent hover:bg-accentDark text-primaryDark font-medium rounded-lg transition-all duration-300">
+                            UpWork Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonial Section -->
+    <section id="testimonials" class="py-20 bg-light">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primaryDark mb-4">
+                    Client <span class="text-accent">Testimonials</span>
+                </h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+                <p class="text-accent max-w-2xl mx-auto mt-6">Hear what industry leaders say about working with me</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 testimonial-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content text-primaryDark mb-6 italic">
+                        "Reagan transformed our cloud infrastructure with his expertise in AWS and security best practices. The system he built has been running flawlessly for over a year with zero downtime."
+                    </div>
+                    <div class="testimonial-author flex items-center">
+                        <div class="w-12 h-12 rounded-full mr-4 bg-primary/20 flex items-center justify-center">
+                            <i class="ph ph-user text-accent text-xl"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4 class="font-bold text-primaryDark">Michael Johnson</h4>
+                            <p class="text-accent text-sm">CTO, FinTech Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content text-primaryDark mb-6 italic">
+                        "Working with Reagan on our Java backend was a game-changer. His attention to detail and performance optimization skills helped us scale to handle 10x more traffic than before."
+                    </div>
+                    <div class="testimonial-author flex items-center">
+                        <div class="w-12 h-12 rounded-full mr-4 bg-primary/20 flex items-center justify-center">
+                            <i class="ph ph-user text-accent text-xl"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4 class="font-bold text-primaryDark">Sarah Williams</h4>
+                            <p class="text-accent text-sm">Product Manager, E-Commerce Platform</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content text-primaryDark mb-6 italic">
+                        "Reagan's ability to understand complex financial requirements and translate them into technical solutions is exceptional. He delivered our trading platform ahead of schedule."
+                    </div>
+                    <div class="testimonial-author flex items-center">
+                        <div class="w-12 h-12 rounded-full mr-4 bg-primary/20 flex items-center justify-center">
+                            <i class="ph ph-user text-accent text-xl"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4 class="font-bold text-primaryDark">David Chen</h4>
+                            <p class="text-accent text-sm">CEO, Investment Firm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Client logos -->
+            <div class="mt-16">
+                <h3 class="text-center text-xl font-semibold text-primaryDark mb-8">Trusted By</h3>
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-80">
+                    <div class="w-24 h-16 bg-primary/10 rounded-lg flex items-center justify-center">
+                        <span class="text-primaryDark font-bold">Company 1</span>
+                    </div>
+                    <div class="w-24 h-16 bg-primary/10 rounded-lg flex items-center justify-center">
+                        <span class="text-primaryDark font-bold">Company 2</span>
+                    </div>
+                    <div class="w-24 h-16 bg-primary/10 rounded-lg flex items-center justify-center">
+                        <span class="text-primaryDark font-bold">Company 3</span>
+                    </div>
+                    <div class="w-24 h-16 bg-primary/10 rounded-lg flex items-center justify-center">
+                        <span class="text-primaryDark font-bold">Company 4</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-light">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primaryDark mb-4">
+                    My <span class="text-accent">Services</span>
+                </h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+                <p class="text-accent max-w-2xl mx-auto mt-6">
+                    Comprehensive solutions tailored to your business needs.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-primary/10 rounded-xl p-8 transition-all duration-300 card-hover">
+                    <div class="w-14 h-14 bg-accent/20 rounded-xl flex items-center justify-center mb-6 text-accent">
+                        <i class="fas fa-laptop-code text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primaryDark mb-4">Web Development</h3>
+                    <p class="text-primaryDark mb-6">
+                        Custom web applications built with modern technologies, optimized for performance and user experience.
+                    </p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-primaryDark">
+                            <i class="fas fa-check-circle text-accent mr-2"></i> Responsive Design
+                        </li>
+                        <li class="flex items-center text-primaryDark">
+                            <i class="fas fa-check-circle text-accent mr-2"></i> Progressive Web Apps
+                        </li>
+                        <li class="flex items-center text-primaryDark">
+                            <i class="fas fa-check-circle text-accent mr-2"></i> API Integration
+                        </li>
+                    </ul>
+                    
+                    <!-- Service animation placeholder -->
+                    <div class="mt-6 h-32 bg-primaryDark/10 rounded-lg flex items-center justify-center">
+                        <i class="ph ph-code text-5xl text-accent"></i>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-primary/10 rounded-xl p-8 transition-all duration-300 card-hover">
+                    <div class="w-14 h-14 bg-accent/20 rounded-xl flex items-center justify-center mb-6 text-accent">
+                        <i class="fas fa-server text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primaryDark mb-4">Backend Solutions</h3>
+                    <p class="text-primaryDark mb-6">
+                        Robust backend systems with proper architecture, security, and scalability in mind.
+                    </p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-primaryDark">
+                            <i class="fas fa-check-circle text-accent mr-2"></i> REST & GraphQL APIs
+                        </li>
+                        <li class="flex items-center text-primaryDark">
+                            <i class="fas fa-check-circle text-accent mr-2"></i> Microservices
+                        </li>
+                        <li class="flex items-center text-primaryDark">
+                            <i class="fas fa-check-circle text-accent mr-2"></i> Database Design
+                        </li>
+                    </ul>
+                    
+                    <!-- Service animation placeholder -->
+                    <div class="mt-6 h-32 bg-primaryDark/10 rounded-lg flex items-center justify-center">
+                        <i class="ph ph-database text-5xl text-accent"></i>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-primary/10 rounded-xl p-8 transition-all duration-300 card-hover">
+                    <div class="w-14 h-14 bg-accent/20 rounded-xl flex items-center justify-center mb-6 text-accent">
+                        <i class="fas fa-chart-line text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primaryDark mb-4">FinTech Consulting</h3>
+                    <p class="text-primaryDark mb-6">
+                        Specialized consulting for financial technology projects, from payment systems to investment platforms.
+                    </p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-primaryDark">
+                            <i class="fas fa-check-circle text-accent mr-2"></i> Payment Integration
+                        </li>
+                        <li class="flex items-center text-primaryDark">
+                            <i class="fas fa-check-circle text-accent mr-2"></i> Trading APIs
+                        </li>
+                        <li class="flex items-center text-primaryDark">
+                            <i class="fas fa-check-circle text-accent mr-2"></i> Financial Data
+                        </li>
+                    </ul>
+                    
+                    <!-- Service animation placeholder -->
+                    <div class="mt-6 h-32 bg-primaryDark/10 rounded-lg flex items-center justify-center">
+                        <i class="ph ph-currency-dollar text-5xl text-accent"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Rate Card Section -->
+    <section class="pricing-section bg-light py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primaryDark mb-4">
+                    Service <span class="text-accent">Rates</span>
+                </h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+                <p class="text-accent max-w-2xl mx-auto mt-6">
+                    Transparent pricing for projects of all sizes. Let's build something great together.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pricing-container">
+                <!-- Basic Tier -->
+                <div class="pricing-card">
+                    <div class="pricing-header text-center mb-6">
+                        <h3 class="text-xl font-bold text-primaryDark mb-2">Basic</h3>
+                        <div class="price text-4xl font-bold text-accent mb-1">$50<span class="text-lg text-primaryDark">/hour</span></div>
+                        <div class="price-details">
+                            <span class="minimum text-accent text-sm">(4-hour minimum)</span>
+                        </div>
+                    </div>
+                    <div class="scope mb-6">
+                        <h4 class="text-primaryDark font-medium mb-2">Perfect For:</h4>
+                        <p class="text-accent text-sm">Small business sites • Portfolio updates • Plugin integrations</p>
+                    </div>
+                    <ul class="features space-y-3 mb-6">
+                        <li class="flex items-center text-primaryDark"><i class="ph ph-check-circle text-accent mr-2"></i> Website Audit</li>
+                        <li class="flex items-center text-primaryDark"><i class="ph ph-check-circle text-accent mr-2"></i> Basic Consulting</li>
+                        <li class="flex items-center text-primaryDark"><i class="ph ph-check-circle text-accent mr-2"></i> Email Support</li>
+                    </ul>
+                    <div class="fine-print text-accent text-sm mt-4 mb-6">
+                        <p>✓ 50% deposit required<br>
+                           ✓ 3 revision rounds included<br>
+                           ✓ 14-day support window</p>
+                    </div>
+                    <a href="#contact" class="pricing-btn w-full px-6 py-3 bg-accent hover:bg-accentDark text-primaryDark font-medium rounded-lg transition-all duration-300 text-center block">
+                        Get Started
+                    </a>
+                    <div class="value-props mt-6 space-y-3">
+                        <div class="benefit flex items-center text-primaryDark text-sm">
+                            <i class="ph ph-lock-key text-accent mr-2"></i>
+                            <span>Secure payments</span>
+                        </div>
+                        <div class="benefit flex items-center text-primaryDark text-sm">
+                            <i class="ph ph-clock-counter-clockwise text-accent mr-2"></i>
+                            <span>14-day revisions</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pro Tier (Featured) -->
+                <div class="pricing-card featured">
+                    <div class="pricing-header text-center mb-6">
+                        <div class="recommended bg-accent text-primaryDark text-xs font-bold py-1 px-3 rounded-full inline-block mb-2">Most Popular</div>
+                        <h3 class="text-xl font-bold text-primaryDark mb-2">Professional</h3>
+                        <div class="price text-4xl font-bold text-accent mb-1">$900<span class="text-lg text-primaryDark">/project</span></div>
+                        <div class="price-details">
+                            <span class="timeline text-accent text-sm">2-4 week delivery</span>
+                        </div>
+                    </div>
+                    <div class="scope mb-6">
+                        <h4 class="text-primaryDark font-medium mb-2">Perfect For:</h4>
+                        <p class="text-accent text-sm">Business websites • E-commerce stores • Web apps</p>
+                    </div>
+                    <ul class="features space-y-3 mb-6">
+                        <li class="flex items-center text-primaryDark"><i class="ph ph-check-circle text-accent mr-2"></i> Full Website Development</li>
+                        <li class="flex items-center text-primaryDark"><i class="ph ph-check-circle text-accent mr-2"></i> Mobile Optimization</li>
+                        <li class="flex items-center text-primaryDark"><i class="ph ph-check-circle text-accent mr-2"></i> 1 Month Support</li>
+                        <li class="flex items-center text-primaryDark"><i class="ph ph-check-circle text-accent mr-2"></i> Basic SEO</li>
+                    </ul>
+                    <div class="fine-print text-accent text-sm mt-4 mb-6">
+                        <p>✓ 50% deposit required<br>
+                           ✓ 3 revision rounds<br>
+                           ✓ 1 month support</p>
+                    </div>
+                    <a href="#contact" class="pricing-btn w-full px-6 py-3 bg-accent hover:bg-accentDark text-primaryDark font-medium rounded-lg transition-all duration-300 text-center block">
+                        Start Project
+                    </a>
+                    <div class="value-props mt-6 space-y-3">
+                        <div class="benefit flex items-center text-primaryDark text-sm">
+                            <i class="ph ph-shield-check text-accent mr-2"></i>
+                            <span>SSL included</span>
+                        </div>
+                        <div class="benefit flex items-center text-primaryDark text-sm">
+                            <i class="ph ph-infinity text-accent mr-2"></i>
+                            <span>Hosting guidance</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Enterprise Tier -->
+                <div class="pricing-card">
+                    <div class="pricing-header text-center mb-6">
+                        <h3 class="text-xl font-bold text-primaryDark mb-2">Enterprise</h3>
+                        <div class="price text-4xl font-bold text-accent mb-1">Custom</div>
+                        <div class="price-details">
+                            <span class="timeline text-accent text-sm">Ongoing support</span>
+                        </div>
+                    </div>
+                    <div class="scope mb-6">
+                        <h4 class="text-primaryDark font-medium mb-2">Perfect For:</h4>
+                        <p class="text-accent text-sm">Large businesses • SaaS platforms • Custom solutions</p>
+                    </div>
+                    <ul class="features space-y-3 mb-6">
+                        <li class="flex items-center text-primaryDark"><i class="ph ph-check-circle text-accent mr-2"></i> Full Stack Development</li>
+                        <li class="flex items-center text-primaryDark"><i class="ph ph-check-circle text-accent mr-2"></i> Ongoing Maintenance</li>
+                        <li class="flex items-center text-primaryDark"><i class="ph ph-check-circle text-accent mr-2"></i> Priority Support</li>
+                        <li class="flex items-center text-primaryDark"><i class="ph ph-check-circle text-accent mr-2"></i> Advanced SEO</li>
+                        <li class="flex items-center text-primaryDark"><i class="ph ph-check-circle text-accent mr-2"></i> Custom Solutions</li>
+                    </ul>
+                    <div class="fine-print text-accent text-sm mt-4 mb-6">
+                        <p>✓ Custom payment terms<br>
+                           ✓ Unlimited revisions<br>
+                           ✓ Ongoing support</p>
+                    </div>
+                    <a href="#contact" class="pricing-btn w-full px-6 py-3 bg-accent hover:bg-accentDark text-primaryDark font-medium rounded-lg transition-all duration-300 text-center block">
+                        Contact Me
+                    </a>
+                    <div class="value-props mt-6 space-y-3">
+                        <div class="benefit flex items-center text-primaryDark text-sm">
+                            <i class="ph ph-git-fork text-accent mr-2"></i>
+                            <span>API integrations</span>
+                        </div>
+                        <div class="benefit flex items-center text-primaryDark text-sm">
+                            <i class="ph ph-rocket-launch text-accent mr-2"></i>
+                            <span>Priority deployment</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Custom Service Rates Section -->
+            <div class="custom-rates mt-20 bg-primary/10 rounded-xl p-8">
+                <h3 class="text-2xl font-bold text-primaryDark mb-4">Custom Service Rates</h3>
+                <p class="text-primaryDark mb-6">For specialized projects that don't fit standard packages, I offer custom solutions with flexible pricing.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 custom-rates-list mt-8">
+                    <div class="custom-rates-item bg-primary/20 p-6 rounded-lg">
+                        <h4 class="text-lg font-semibold text-primaryDark mb-2">Custom Development</h4>
+                        <p class="text-accent">Tailored solutions for unique business requirements</p>
+                    </div>
+                    <div class="custom-rates-item bg-primary/20 p-6 rounded-lg">
+                        <h4 class="text-lg font-semibold text-primaryDark mb-2">Ongoing Maintenance</h4>
+                        <p class="text-accent">Monthly retainer for continuous support</p>
+                    </div>
+                    <div class="custom-rates-item bg-primary/20 p-6 rounded-lg">
+                        <h4 class="text-lg font-semibold text-primaryDark mb-2">Team Augmentation</h4>
+                        <p class="text-accent">Join your team as a dedicated developer</p>
+                    </div>
+                    <div class="custom-rates-item bg-primary/20 p-6 rounded-lg">
+                        <h4 class="text-lg font-semibold text-primaryDark mb-2">Technical Consulting</h4>
+                        <p class="text-accent">Expert guidance for your technical roadmap</p>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-8">
+                    <a href="#contact" class="inline-block px-6 py-3 bg-accent hover:bg-accentDark text-primaryDark font-medium rounded-lg transition-all duration-300">
+                        Request Custom Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-light">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primaryDark mb-4">
+                    Let's <span class="text-accent">Build Together</span>
+                </h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+                <p class="text-accent max-w-2xl mx-auto mt-6">
+                    I'm currently available for freelance projects and full-time opportunities.
+                </p>
+            </div>
+            
+            <div class="contact-grid grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="contact-info">
+                    <h3 class="text-2xl font-bold text-primaryDark mb-6">Get in Touch</h3>
+                    
+                    <div class="contact-methods space-y-6">
+                        <a href="mailto:reaganfwambaa@gmail.com" class="contact-item flex items-center text-primaryDark hover:text-accent transition-colors duration-300">
+                            <i class="ph ph-envelope text-accent text-2xl mr-4"></i>
+                            <span>reaganfwambaa@gmail.com</span>
+                        </a>
+                        <a href="tel:+254790028542" class="contact-item flex items-center text-primaryDark hover:text-accent transition-colors duration-300">
+                            <i class="ph ph-phone text-accent text-2xl mr-4"></i>
+                            <span>+254 790 002 8542</span>
+                        </a>
+                        <a href="https://linkedin.com/in/reagan-f-04a448244" class="contact-item flex items-center text-primaryDark hover:text-accent transition-colors duration-300">
+                            <i class="ph ph-linkedin-logo text-accent text-2xl mr-4"></i>
+                            <span>LinkedIn Profile</span>
+                        </a>
+                        <a href="https://github.com/reagansfwamba" class="contact-item flex items-center text-primaryDark hover:text-accent transition-colors duration-300">
+                            <i class="ph ph-github-logo text-accent text-2xl mr-4"></i>
+                            <span>GitHub Profile</span>
+                        </a>
+                    </div>
+                    
+                    <div class="mt-12">
+                        <h4 class="text-xl font-semibold text-primaryDark mb-4">Follow Me</h4>
+                        <div class="social-links flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent hover:bg-accent hover:text-primaryDark transition-colors duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent hover:bg-accent hover:text-primaryDark transition-colors duration-300">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent hover:bg-accent hover:text-primaryDark transition-colors duration-300">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent hover:bg-accent hover:text-primaryDark transition-colors duration-300">
+                                <i class="fab fa-medium"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Location map placeholder -->
+                    <div class="mt-12">
+                        <h4 class="text-xl font-semibold text-primaryDark mb-4">Based in Nairobi, Kenya</h4>
+                        <div class="w-full h-48 bg-primary/20 rounded-lg overflow-hidden relative flex items-center justify-center">
+                            <i class="ph ph-map-pin text-5xl text-accent"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form class="space-y-6">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" class="w-full px-4 py-3 bg-primary/10 border border-accent/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent text-primaryDark" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" class="w-full px-4 py-3 bg-primary/10 border border-accent/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent text-primaryDark" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service-select" class="sr-only">Service Interested In</label>
+                            <select id="service-select" name="service" class="w-full px-4 py-3 bg-primary/10 border border-accent/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent text-primaryDark" required>
+                                <option value="">What service are you interested in?</option>
+                                <option value="web-development">Web Development</option>
+                                <option value="backend-solutions">Backend Solutions</option>
+                                <option value="fintech-consulting">FinTech Consulting</option>
+                                <option value="custom-project">Custom Project</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" class="w-full px-4 py-3 bg-primary/10 border border-accent/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent text-primaryDark" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full px-6 py-3 bg-accent hover:bg-accentDark text-primaryDark font-medium rounded-lg transition-all duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-primaryDark text-light py-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="logo mb-4 md:mb-0">
+                    <a href="#" class="text-2xl font-bold text-accent hover:text-accentDark transition-colors duration-300">
+                        <span class="text-light">Reagan</span> Fwamba
+                    </a>
+                </div>
+                
+                <div class="copyright text-sm">
+                    &copy; 2023 Reagan Fwamba. All rights reserved.
+                </div>
+                
+                <div class="social-links flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent hover:bg-accent hover:text-primaryDark transition-colors duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent hover:bg-accent hover:text-primaryDark transition-colors duration-300">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center text-accent hover:bg-accent hover:text-primaryDark transition-colors duration-300">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="/js/main.js"></script>
+           
+</body>
+</html>
